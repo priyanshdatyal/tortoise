@@ -1,0 +1,904 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    -webkit-box-sizing: border-box;
+    background-repeat: no-repeat;
+    font-family: 'Poppins', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+    scroll-snap-type: y;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+    overflow: hidden;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: rgb(228, 213, 163) !important;
+}
+
+.menu {
+    width: 90%;
+    height: 5%;
+    top: 1.25%;
+    left: 5%;
+    position: fixed;
+    background: white;
+    border-radius: 15px;
+    z-index: 1000;
+    padding: 0;
+    overflow: hidden;
+    padding: .0vw;
+    border: 2px solid black;
+    transition: all .25s linear;
+}
+
+.menu ul {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    /* border-radius: 15px; */
+    overflow: hidden;
+    display: inline-flex;
+}
+
+.menu ul li {
+    width: 33.3%;
+    height: 100%;
+    margin: 0;
+    color: black;
+    position: relative;
+    text-align: center;
+    list-style-type: none;
+    list-style: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.menu ul li a {
+    width: 100% !important;
+    height: 100% !important;
+    font-size: 3.5vw;
+    color: rgb(255, 255, 255);
+    background: black;
+    padding: auto;
+    display: block;
+    padding: 1vh;
+    text-decoration: none;
+}
+
+.menu ul li a:hover {
+    color: rgb(0, 0, 0);
+    background: rgb(255, 255, 255);
+}
+
+.heading {
+    width: 100%;
+    height: 12.5%;
+    position: fixed;
+    z-index: 1000;
+    top: 9%;
+    left: 0;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    background: black;
+    transition: all .25s linear;
+}
+
+.heading h1 {
+    width: 100%;
+    height: 35%;
+    font-size: 5vw;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 2vw;
+}
+
+.contact-card {
+    width: 90%;
+    height: 25%;
+    top: 37.5%;
+    left: 5%;
+    position: fixed;
+    background: rgb(0, 0, 0);
+    border-radius: 25px;
+    z-index: 1000;
+    padding: 0;
+    overflow: hidden;
+    z-index: 1000;
+    box-shadow: 0px 0px 15px 2px rgb(184, 184, 184);
+    transition: all 0.5s linear;
+    z-index: 1500;
+    transform: translateX(-200%);
+}
+
+.contact-card h1 {
+    width: 100%;
+    font-size: 6vw;
+    text-align: center;
+    color: white;
+    position: absolute;
+    top: 0;
+    padding: 3.75vw;
+    margin: .75vw;
+}
+
+.contact-card ul {
+    position: absolute;
+    width: 100%;
+    height: 75%;
+    top: 25%;
+    margin: 0;
+    padding: 0.5vh;
+    display: block;
+    text-align: left;
+    overflow: hidden;
+    border-top: 2px solid white;
+}
+
+.contact-card ul li {
+    width: 100%;
+    height: 25%;
+    margin: 0;
+    padding: .75vw;
+    color: black;
+    position: relative;
+    text-align: center;
+    list-style-type: none;
+    list-style: none;
+    /* border-radius: 15px; */
+    margin: 0;
+    cursor: pointer;
+}
+
+.contact-card ul li a {
+    width: 100% !important;
+    height: 100% !important;
+    font-size: 2.5vw;
+    color: rgb(255, 255, 255);
+    /* padding: .5vw;    */
+    padding: auto;
+    display: block;
+    text-align: left;
+}
+
+.contains {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.powersel {
+    width: 35vw;
+    height: fit-content;
+    position: fixed;
+    left: 5%;
+    top: 15%;
+    border-radius: 5px;
+    display: inline-block;
+    overflow: hidden;
+    z-index: 1000;
+    transition: all 0.25s linear;
+}
+
+.powersel h3 {
+    text-align: center;
+    height: 100%;
+    padding: .25vw;
+    font-size: 3.5vw;
+    color: white;
+    margin: 0;
+    margin-right: .5vw;
+}
+
+.powersel select {
+    border: 1px solid white;
+    height: 5.25vw;
+    font-size: 3vw;
+    border-radius: 3px;
+    background: black;
+    color: white;
+    margin: 0;
+}
+
+.colsel {
+    width: 35vw;
+    height: fit-content;
+    position: fixed;
+    right: 5%;
+    top: 15%;
+    border-radius: 5px;
+    display: inline-block;
+    overflow: hidden;
+    z-index: 1000;
+    transition: all 0.25s linear;
+}
+
+.colsel h3 {
+    text-align: center;
+    height: 100%;
+    padding: .25vw;
+    font-size: 3.5vw;
+    color: white;
+    margin: 0;
+    margin-right: .5vw;
+}
+
+.colsel select {
+    border: 1px solid white;
+    height: 5vw;
+    font-size: 3vw;
+    border-radius: 3px;
+    background: black;
+    color: white;
+    margin: 0;
+}
+
+.cont-cust-container select {
+    height: 5.25vw;
+    font-size: 3vw;
+}
+
+.container-machines {
+    padding: 2vw;
+    width: 95%;
+    height: fit-content;
+    position: absolute;
+    display: grid;
+    grid-template-columns: auto auto;
+    top: 22.5%;
+    left: 2.5%;
+    overflow-y: auto;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.imgplaceholder {
+    width: 90%;
+    height: 60%;
+    left: 5%;
+    top: 2%;
+    position: absolute;
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: 300;
+    text-align: center;
+    line-height: 100%;
+    display: block;
+    font-size: 4vw;
+    padding-top: 25%;
+}
+
+.chakki-card {
+    width: 40vw !important;
+    height: 40vw !important;
+    position: relative;
+    padding: 1.5vw;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgb(0, 0, 0);
+    box-shadow: 1px 1px 15px -2px rgba(0, 0, 0, 1);
+    background: rgb(255, 255, 255);
+    display: flex;
+    margin: 2vw;
+}
+
+.chakki-card-image {
+    width: 90%;
+    height: 60%;
+    left: 5%;
+    top: 2%;
+    border: 1px solid rgba(0, 0, 0, 1);
+    position: absolute;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.chakki-card-image img {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+}
+
+.chakki-card-info {
+    position: absolute;
+    width: 100%;
+    padding-bottom: .125vw;
+    padding-left: .25vw;
+    height: 35%;
+    top: 65%;
+    font-size: 3vw;
+}
+
+.buyit {
+    width: 30%;
+    padding: 0.25vw;
+    height: 15%;
+    overflow: hidden;
+    font-size: 3.5vw;
+    color: greenyellow;
+    position: absolute;
+    bottom: 2.5%;
+    right: 2.5%;
+    z-index: 900;
+    text-align: center;
+    border-radius: 7px;
+    background: black;
+}
+
+.cont-cust-container {
+    position: absolute;
+    display: block;
+    top: 20%;
+    left: 10%;
+    width: 80%;
+    height: 60%;
+    border-radius: 15px;
+    border: 2px solid black;
+    padding: 2vw;
+    font-size: .75vw;
+    background: rgb(206, 228, 172);
+    transform: translateX(-200%);
+    transition: all .5s linear;
+    z-index: 1500;
+}
+
+.form-con {
+    width: 100%;
+    height: 90%;
+    position: absolute;
+    top: 10%;
+    left: 0%;
+    margin: 0;
+    padding: 2.5vw;
+}
+
+.form-con {
+    width: 100%;
+    height: 95%;
+    position: absolute;
+    top: 5%;
+    left: 0%;
+    margin: 0;
+    padding: 1.25vw;
+}
+
+label {
+    font-size: 3vw;
+    margin-top: 1vw;
+}
+
+input[type=text],
+select,
+textarea {
+    width: 100%;
+    /* Full width */
+    padding: .5vw;
+    /* Some padding */
+    border: 1px solid #ccc;
+    /* Gray border */
+    border-radius: 5px;
+    /* Rounded borders */
+    box-sizing: border-box;
+    /* Make sure that padding and width stays in place */
+    margin-top: .25vw;
+    /* Add a top margin */
+    margin-bottom: .5vw;
+    /* Bottom margin */
+    resize: vertical/* Allow the user to vertically resize the textarea (not horizontally) */
+    ;
+    border: 1px solid rgb(255, 255, 255);
+    font-size: 3vw;
+}
+
+#adress {
+    height: 30vw;
+    font-size: 3vw;
+}
+
+
+/* Style the submit button with a specific background color etc */
+
+input[type=submit] {
+    background-color: #04AA6D;
+    color: #ffffff;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 3vw;
+    margin: 2vw;
+    position: absolute;
+    bottom: 2%;
+    right: 2%;
+    padding: 1.5vw;
+}
+
+
+/* When moving the mouse over the submit button, add a darker green color */
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+
+/* Add a background color and some padding around the form */
+
+.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: .25vw;
+}
+
+.closebutton {
+    width: 10vw;
+    padding: .25vw;
+    text-align: center;
+    height: 4vw;
+    color: white;
+    background: rgb(209, 96, 96);
+    border-radius: 5px;
+    position: absolute;
+    right: 2.5%;
+    top: 3%;
+    font-size: 2.75vw;
+}
+
+.closebutton:hover {
+    background: red;
+}
+
+.none-found {
+    width: 100%;
+    color: red;
+    height: 10%;
+    font-size: 3vw;
+    position: absolute;
+    top: 45%;
+    left: 0;
+}
+
+.loader {
+    width: 15vw;
+    height: 15vw;
+    position: absolute;
+    top: 52.5%;
+    left: 42.5%;
+    z-index: 1000;
+    display: none;
+}
+
+.loader img {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+}
+
+@media screen and (min-width: 1366px) {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+        -webkit-box-sizing: border-box;
+        background-repeat: no-repeat;
+        font-family: 'Poppins', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        scroll-behavior: smooth;
+        scroll-snap-type: y;
+        cursor: pointer;
+    }
+    body::-webkit-scrollbar {
+        display: none;
+        overflow: hidden;
+    }
+    body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        background: rgb(228, 213, 163) !important;
+    }
+    .menu {
+        width: 50%;
+        height: 5%;
+        top: 2.25%;
+        left: 25%;
+        position: fixed;
+        background: rgb(0, 0, 0);
+        border-radius: 15px;
+        z-index: 1000;
+        padding: 0;
+        overflow: hidden;
+        border: 2px solid rgb(0, 0, 0);
+    }
+    .menu ul {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        border-radius: 15px;
+        overflow: hidden;
+        display: inline-flex;
+    }
+    .menu ul li {
+        width: 33.3%;
+        height: 100%;
+        margin: 0;
+        color: rgb(0, 0, 0);
+        position: relative;
+        text-align: center;
+        list-style-type: none;
+        list-style: none;
+        cursor: pointer;
+    }
+    .menu ul li a {
+        width: 100% !important;
+        height: 100% !important;
+        font-size: 1.25vw;
+        color: rgb(255, 255, 255);
+        padding: .25vw;
+        padding: auto;
+        display: block;
+        text-decoration: none;
+    }
+    .menu ul li a:hover {
+        color: rgb(0, 0, 0);
+        background: rgb(255, 255, 255);
+    }
+    .heading {
+        width: 100%;
+        height: 10%;
+        position: absolute;
+        top: 10%;
+        left: 0;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+        background: black;
+    }
+    .heading h1 {
+        width: 100%;
+        font-size: 3vw;
+        color: white;
+        text-align: center;
+        padding: 1vw;
+    }
+    .contact-card {
+        width: 40%;
+        height: 35%;
+        top: 37.5%;
+        left: 30%;
+        position: fixed;
+        background: rgb(0, 0, 0);
+        border-radius: 25px;
+        z-index: 1000;
+        padding: 0;
+        overflow: hidden;
+        z-index: 1000;
+        box-shadow: 0px 0px 15px 2px rgb(184, 184, 184);
+        transition: all 0.5s linear;
+        transform: translateX(-200%);
+        z-index: 1500;
+    }
+    .contact-card h1 {
+        width: 100%;
+        font-size: 2vw;
+        text-align: center;
+        color: white;
+        position: absolute;
+        top: 0;
+        padding: .75vw;
+    }
+    .contact-card ul {
+        position: absolute;
+        width: 100%;
+        height: 75%;
+        top: 25%;
+        margin: 0;
+        padding: 0.5vh;
+        display: block;
+        text-align: left;
+        overflow: hidden;
+        border-top: 2px solid white;
+    }
+    .contact-card ul li {
+        width: 100%;
+        height: 25%;
+        margin: 0;
+        padding: .75vw;
+        color: black;
+        position: relative;
+        text-align: center;
+        list-style-type: none;
+        list-style: none;
+        /* border-radius: 15px; */
+        margin: 0;
+        cursor: pointer;
+    }
+    .contact-card ul li a {
+        width: 100% !important;
+        height: 100% !important;
+        font-size: 1.25vw;
+        color: rgb(255, 255, 255);
+        /* padding: .5vw;    */
+        padding: auto;
+        display: block;
+        text-align: left;
+    }
+    .contains {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .powersel {
+        width: 15vw;
+        height: fit-content;
+        position: absolute;
+        left: 5%;
+        top: 10.5%;
+        border-radius: 10px;
+        display: inline-block;
+        overflow: hidden;
+    }
+    .powersel h3 {
+        height: 100%;
+        padding: .25vw;
+        font-size: 1.25vw;
+        color: white;
+        margin-right: .5vw;
+    }
+    .powersel select {
+        height: 2vw;
+        font-size: 1vw;
+        border-radius: 10px;
+        border: 1px solid white;
+        background: black;
+        color: white;
+    }
+    .colsel {
+        width: 15vw;
+        height: fit-content;
+        position: absolute;
+        right: 5%;
+        top: 10.5%;
+        border-radius: 10px;
+        display: inline-block;
+        overflow: hidden;
+    }
+    .colsel h3 {
+        height: 100%;
+        padding: .25vw;
+        font-size: 1.25vw;
+        color: white;
+        margin-right: .5vw;
+    }
+    .colsel select {
+        height: 2vw;
+        font-size: 1vw;
+        border-radius: 10px;
+        border: 1px solid white;
+        background: black;
+        color: white;
+    }
+    .cont-cust-container select {
+        height: 2vw;
+        font-size: 1vw;
+    }
+    .container-machines {
+        padding: 1vw;
+        width: fit-content;
+        max-width: 95%;
+        height: 80%;
+        position: absolute;
+        display: grid;
+        grid-template-columns: auto auto auto auto auto;
+        grid-column-gap: 0;
+        top: 20%;
+        left: 2.5%;
+        overflow-y: auto;
+        border-radius: 15px;
+        object-fit: contain;
+    }
+    .container-machines::-webkit-scrollbar {
+        width: 1vw;
+        border: 1px solid black;
+        padding: .125vw;
+    }
+    /* Track */
+    .container-machines::-webkit-scrollbar-track {
+        background: #0000006e;
+    }
+    /* Handle */
+    .container-machines::-webkit-scrollbar-thumb {
+        background: rgb(255, 255, 255);
+        border-radius: 5px;
+    }
+    /* Handle on hover */
+    .container-machines::-webkit-scrollbar-thumb:hover {
+        background: rgb(0, 0, 0);
+    }
+    .chakki-card {
+        width: 16vw;
+        height: 16vw;
+        max-height: 16vw;
+        max-width: 16vw;
+        position: relative;
+        padding: .5vw;
+        border-radius: 10px;
+        overflow: hidden;
+        border: 2px solid rgb(0, 0, 0);
+        box-shadow: 13px 13px 15px -11px rgba(0, 0, 0, 1);
+        background: rgb(255, 255, 255);
+        margin: 1.25vw;
+    }
+    .imgplaceholder {
+        width: 90%;
+        height: 60%;
+        left: 5%;
+        top: 2%;
+        border: 1px solid rgb(255, 0, 0);
+        position: absolute;
+        border-radius: 10px;
+        overflow: hidden;
+        z-index: 300;
+        text-align: center;
+        line-height: 100%;
+        display: block;
+        font-size: 2vw;
+        padding-top: 20%;
+    }
+    .chakki-card-image {
+        width: 90%;
+        height: 60%;
+        left: 5%;
+        top: 2%;
+        border: 1px solid rgba(0, 0, 0, 1);
+        position: absolute;
+        border-radius: 10px;
+        overflow: hidden;
+        z-index: 400;
+    }
+    .chakki-card-image img {
+        width: 100%;
+        height: 100%;
+        margin: auto;
+    }
+    .chakki-card-info {
+        position: absolute;
+        width: 100%;
+        padding-bottom: .5vw;
+        padding-left: .5vw;
+        height: 35%;
+        top: 65%;
+        font-size: .75vw;
+    }
+    .buyit {
+        width: 20%;
+        padding: 0.25vw;
+        height: 10%;
+        overflow: hidden;
+        font-size: 2vw;
+        color: greenyellow;
+        position: absolute;
+        bottom: 5%;
+        font-size: .75vw;
+        right: 5%;
+        z-index: 1000;
+        text-align: center;
+        border-radius: 10px;
+        background: black;
+    }
+    .cont-cust-container {
+        position: absolute;
+        display: block;
+        top: 20%;
+        left: 20%;
+        width: 60%;
+        height: 60%;
+        border-radius: 15px;
+        border: 2px solid black;
+        padding: 2vw;
+        font-size: .5vw;
+        background: rgb(218, 241, 184);
+        transform: translateX(-200%);
+        transition: all .5s linear;
+        z-index: 1500;
+    }
+    label {
+        font-size: 1vw;
+        margin-top: .75vw;
+    }
+    input[type=text],
+    select,
+    textarea {
+        width: 100%;
+        /* Full width */
+        padding: .25vw;
+        /* Some padding */
+        border: 1px solid #ccc;
+        /* Gray border */
+        border-radius: 7px;
+        /* Rounded borders */
+        box-sizing: border-box;
+        /* Make sure that padding and width stays in place */
+        margin-top: .125vw;
+        /* Add a top margin */
+        margin-bottom: .25vw;
+        /* Bottom margin */
+        resize: vertical/* Allow the user to vertically resize the textarea (not horizontally) */
+        ;
+        border: 1px solid rgb(255, 255, 255);
+        font-size: 1vw;
+    }
+    #adress {
+        height: 5vw;
+        font-size: 1vw;
+    }
+    /* Style the submit button with a specific background color etc */
+    input[type=submit] {
+        background-color: #04AA6D;
+        color: #ffffff;
+        padding: .5vw;
+        border: none;
+        border-radius: 7px;
+        cursor: pointer;
+        position: absolute;
+        bottom: 2%;
+        right: 2%;
+        font-size: 1vw;
+        margin: .5vw;
+    }
+    /* When moving the mouse over the submit button, add a darker green color */
+    input[type=submit]:hover {
+        background-color: #45a049;
+    }
+    /* Add a background color and some padding around the form */
+    .container {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: .25vw;
+    }
+    .closebutton {
+        width: 5vw;
+        padding: .5vw;
+        text-align: center;
+        height: 2vw;
+        color: white;
+        background: rgb(209, 96, 96);
+        border-radius: 5px;
+        position: absolute;
+        right: 2.5%;
+        top: 3%;
+        font-size: .75vw;
+    }
+    .closebutton:hover {
+        background: red;
+    }
+    .loader {
+        width: 3vw;
+        height: 3vw;
+        position: absolute;
+        top: 55%;
+        left: 48.50%;
+        z-index: 1000;
+        display: none;
+    }
+    .loader img {
+        width: 100%;
+        height: 100%;
+        margin: auto;
+    }
+}

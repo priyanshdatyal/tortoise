@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    {% load static %}
+    <title>Tortoise</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" type="image/x-icon" sizes="128x128" href="./res/icons/pdicon.png">
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Oswald:700|Poppins" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=IM+Fell+English|Playfair+Display:900" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenLite.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TimelineMax.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- <link rel="shortcut icon" type="image/x-icon" href="iconn.jpg"> -->
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <link href="https://fonts.googleapis.com/css?family=Oswald:700|Poppins" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=IM+Fell+English|Playfair+Display:900" rel="stylesheet">
+
+
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,200' rel='stylesheet' type='text/css'>
+
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+    <link rel="stylesheet" type="text/css" href="{% static './css/brand.css' %}" />
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+
+<body class="light">
+
+
+    <div class="contains" id="plans">
+
+        <div class="left">
+            <div class="lrtags">
+                Existing Plans
+            </div>
+
+
+            <div class="flexit header">
+                <div class="teXt">
+                    Plan ID
+                </div>
+                <div class="teXt">
+                    Plan Name
+                </div>
+                <div class="teXt">
+                    Plan Tenure
+                </div>
+                <div class="teXt">
+                    Plan Benefit %
+                </div>
+                <div class="teXt">
+                    Plan Amount
+                </div>
+                <div class="teXt">
+                    Pormotion %
+                </div>
+                <div class="teXt">
+                    Benefit Type 
+                </div>
+                <div class="teXt">
+                    End Date 
+                </div>
+            </div>
+            <div class="plans blocks">
+
+                {% for item in pn %}
+                <div class="teXt">{{plans}}</div>
+                <div class="flexit dvdr">
+                    <div class="teXt">
+                        {{item.planid}}
+                    </div>
+                    <div class="teXt">
+                        {{item.planname}}
+                    </div>
+                    <div class="blocks">
+                        <div class="teXt">
+                            {{item.lowtn}} months
+                        </div>
+                        <div class="teXt">
+                            {{item.midtn}} months
+                        </div>
+                        <div class="teXt">
+                            {{item.hightn}} months
+                        </div>
+                    </div>
+                    <div class="blocks">
+
+                        <div class="teXt">
+                            {{item.lbp}}%
+                        </div>
+                        <div class="teXt">
+                            {{item.mbp}}%
+                        </div>
+                        <div class="teXt">
+                            {{item.hbp}}%
+                        </div>
+                    </div>
+                    <div class="blocks">
+
+                        <div class="teXt">
+                            ₹ {{item.lowam}}
+                        </div>
+                        <div class="teXt">
+                            ₹ {{item.midam}}
+                        </div>
+                        <div class="teXt">
+                            ₹ {{item.hiam}}
+                        </div>
+                    </div>
+                    <div class="blocks">
+                        <div class="teXt">
+                            {{item.lpromPrcnt}}%
+                        </div>
+                        <div class="teXt">
+                            {{item.mpromPrcnt}}%
+                        </div>
+                        <div class="teXt">
+                            {{item.hpromPrcnt}}%
+                        </div>
+                    </div>
+                    <div class="blocks">
+                        <div class="teXt">
+                            {{item.ltype}}
+                        </div>
+                        <div class="teXt">
+                            {{item.mtype}}
+                        </div>
+                        <div class="teXt">
+                            {{item.htype}}
+                        </div>
+                    </div>
+                    <div class="teXt">
+                        {{item.endDate}}
+                    </div>
+
+                </div>
+                {% empty %}
+
+                <h2
+                    style="color:red; width:70vw; height:fit-content; text-align: center; position:absolute; left:0; top:45%;">
+                    No machines found </h2>
+
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="right">
+            <div class="lrtags">
+                Add a Plan
+            </div>
+            <div class="lrinfo">
+                Add Information in the form to add a new plan
+            </div>
+
+
+            <form class="form dvdr" action="{% url 'addPlan' %}" method="POST" >
+                {%csrf_token%}
+                <label for="pid">Plan ID</label>
+                <input type="text" id="pid" name="planid" placeholder="Plan ID ......." required>
+
+                <label for="pn">Plan Name</label>
+                <input type="text" id="pn" name="planname" placeholder="Plan name.." required>
+
+                <label for="to">Tenure Options(in months)</label>
+                <div class="flexit">
+
+                    <input type="text" id="lowtn" name="lowtn" placeholder="Low Tier Tenure ......." required>
+                    <input type="text" id="midtn" name="midtn" placeholder="Mid Tier Tenure ......." required>
+                    <input type="text" id="hightn" name="hightn" placeholder="HighEnd Tier Tenure ......." required>
+                </div>
+
+
+
+                <label for="bp">Benefit Percentage</label>
+                <div class="flexit">
+
+                    <input type="text" id="lbp" name="lbp" placeholder="Benefit Percentage " required>
+                    <input type="text" id="mbp" name="mbp" placeholder="Benefit Percentage " required>
+                    <input type="text" id="hbp" name="hbp" placeholder="Benefit Percentage " required>
+                </div>
+
+                <label for="ao">Amoout Options </label>
+                <div class="flexit">
+
+                    <input type="text" id="lowam" name="lowam" placeholder="Low Tier Plan Amount ......." required>
+                    <input type="text" id="midam" name="midam" placeholder="Mid Tier Plan Amount ......." required>
+                    <input type="text" id="hiam" name="hiam" placeholder="HighEnd Tier Plan Amount ......." required>
+                </div>
+
+
+
+
+                <input class="subm" type="submit" value="Submit">
+            </form>
+
+            <form class="form"  action="{% url 'addPBP' %}" method="POST">
+                {% csrf_token %}
+                <div class="lrtags ">
+                    Add Promotional Plan
+                </div>
+                <div class="lrinfo ">
+                    TO remove promotional plan, set benefit to 0
+                </div>
+                <label for="pid">Plan ID</label>
+                <input type="text" id="pid" name="planid" placeholder="Plan ID ......." required>
+                <div class="flexit">
+                    <div class="teXt"><b>BASIC PLAN</b></div>
+                    <div class="teXt"><b>MID PLAN</b></div>
+                    <div class="teXt"><b>PREMIUM PLAN</b></div>
+                </div>
+                <label for="ao">Benefit Type </label>
+                <div class="flexit">
+
+                    <!-- <input type="text" id="lowam" name="lowam" placeholder="Low Tier Plan Amount ......." required> -->
+                    <select name="ltype" id="ltype" required>
+                        <option value="Cashback">Cashback</option>
+                        <option value="Extra Voucher">Extra Voucher</option>
+                        <option value="Extra Benefit">Extra Benefit</option>
+                    </select>
+                    <select name="mtype" id="mtype" required>
+                        <option value="Cashback">Cashback</option>
+                        <option value="Extra Voucher">Extra Voucher</option>
+                        <option value="Extra Benefit">Extra Benefit</option>
+                    </select>
+                    <select name="htype" id="htype" required>
+                        <option value="Cashback">Cashback</option>
+                        <option value="Extra Voucher">Extra Voucher</option>
+                        <option value="Extra Benefit">Extra Benefit</option>
+                    </select>
+                </div>
+
+                <label>Quota Limit</label>
+                <input type="text" id="quota" name="quota" placeholder="Quota Limit......." required>
+
+                <label>Promotional Benefit</label>
+                <div class="flexit">
+
+                    <input type="text" id="albp" style="margin-top:0.5vw;" name="lbenefitPercent" placeholder="0 %" required>
+
+                    <input type="text" id="ambp" style="margin-top:0.5vw;" name="mbenefitPercent" placeholder="0 %" required>
+
+                    <input type="text" id="ahbp" style="margin-top:0.5vw;" name="hbenefitPercent" placeholder="0 %" required>
+
+                </div>
+                <label>End Date</label><br>
+                <input type="date" id="txtDate" name="endDate" placeholder="Low Tier Plan Amount ......." required>
+
+                <input class="subm" type="submit" value="Update">
+            </form>
+        </div>
+
+    </div>
+</body>
+{% autoescape off %}
+<script>
+
+    $(function () {
+        var dtToday = new Date();
+
+        var month = dtToday.getMonth() + 1;
+        var day = dtToday.getDate();
+        var year = dtToday.getFullYear();
+        if (month < 10)
+            month = '0' + month.toString();
+        if (day < 10)
+            day = '0' + day.toString();
+
+        var maxDate = year + '-' + month + '-' + day;
+
+        $('#txtDate').attr('min', maxDate);
+    });
+
+
+    // function addPBP(planid, id) {
+    //     let prcnt = 0
+    //     if (id == 1) {
+    //         prcnt = document.getElementById("albp").value
+    //     }
+    //     else if (id == 2) {
+    //         prcnt = document.getElementById("ambp").value
+    //     }
+    //     else {
+    //         prcnt = document.getElementById("ahbp").value
+    //     }
+    //     $.ajax({
+    //         url: '/updatePlanBP/',
+    //         data: {
+    //             'prcnt': prcnt,
+    //             "pid": planid,
+    //             "pbp": id
+    //         },
+    //         success: function (data) {
+    //             $("#plans").html(data);
+    //             server
+    //         }
+    //     });
+    // }
+</script>
+{% endautoescape %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/ScrollMagic.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/plugins/animation.gsap.js"></script>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+</html>

@@ -1,0 +1,219 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    -webkit-box-sizing: border-box;
+    background-repeat: no-repeat;
+    font-family: 'Poppins', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+    scroll-snap-type: y;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+    overflow: hidden;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.menu {
+    width: 90%;
+    height: 5%;
+    top: 1.25%;
+    left: 5%;
+    position: fixed;
+    background: white;
+    border-radius: 15px;
+    z-index: 1000;
+    padding: 0;
+    overflow: hidden;
+    padding: .0vw;
+    border: 2px solid black;
+}
+
+.menu ul {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border-radius: 15px;
+    overflow: hidden;
+    display: inline-flex;
+}
+
+.menu ul li {
+    width: 33.3%;
+    height: 100%;
+    margin: 0;
+    /* padding: .25vw; */
+    color: black;
+    position: relative;
+    text-align: center;
+    list-style-type: none;
+    list-style: none;
+    /* border-radius: 15px; */
+    cursor: pointer;
+    padding: 0;
+}
+
+.menu ul li a {
+    width: 100% !important;
+    height: 100% !important;
+    font-size: 3.5vw;
+    color: black;
+    padding: 0;
+    padding: auto;
+    display: block;
+    padding: 2vw;
+    text-decoration: none;
+}
+
+.menu ul li a:hover {
+    color: white;
+    background: black;
+}
+
+.contains {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(255, 234, 194);
+}
+.header-image {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    object-fit: fit;
+}
+
+.header-image img {
+    width: 250%;
+    position: absolute;
+    left: -75%;
+    height: 100%;
+    margin: auto;
+}
+
+@media screen and (min-width: 1366px) {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+        -webkit-box-sizing: border-box;
+        background-repeat: no-repeat;
+        font-family: 'Poppins', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        scroll-behavior: smooth;
+        scroll-snap-type: y;
+    }
+    body::-webkit-scrollbar {
+        display: none;
+        overflow: hidden;
+    }
+    body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        background: wheat;
+    }
+    .menu {
+        width: 25%;
+        height: 5%;
+        top: 50.25%;
+        left: 37.5%;
+        position: fixed;
+        background: white;
+        border-radius: 5px;
+        z-index: 1000;
+        padding: 0;
+        overflow: hidden;
+        padding: 2px;
+    }
+    .menu ul {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        border-radius: 15px;
+        overflow: hidden;
+        display: inline-flex;
+    }
+    .menu ul li {
+        width: 50%;
+        height: 100%;
+        margin: 0;
+        /* padding: .25vw; */
+        color: black;
+        position: relative;
+        text-align: center;
+        list-style-type: none;
+        list-style: none;
+        /* border-radius: 15px; */
+        cursor: pointer;
+    }
+    .menu ul li a {
+        width: 100% !important;
+        height: 100% !important;
+        font-size: 1.25vw;
+        color: black;
+        padding: .125vw;
+        padding: auto;
+        display: block;
+        text-decoration: none;
+    }
+    .menu ul li a:hover {
+        color: white;
+        background: black;
+    }
+    .contains {
+        margin: 0;
+        padding: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgb(255, 234, 194);
+    }
+    .ima{
+        color: black;
+        width: 100%;
+        text-align: center;
+        font-size: 5vw;
+        position: absolute;
+        top:37.5%;
+        z-index: 1000;
+    }
+    .header-image {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+        object-fit: cover;
+    }
+    .header-image img {
+        width: 100%;
+        position: absolute;
+        left: 0%;
+        height: 100%;
+        margin: auto;
+    }
+}
